@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAPI.Domain", "Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETicaretAPI.Application", "Core\ETicaretAPI.Application\ETicaretAPI.Application.csproj", "{E95C78EA-2B75-49F6-BDE4-8F64288E353B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8D1564F7-9F09-4A9E-9C3E-5C4BDC453053}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infastructure", "Infastructure", "{8D1564F7-9F09-4A9E-9C3E-5C4BDC453053}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETİcaretAPI.Infastructure", "Infastructure\ETİcaretAPI.Infastructure\ETİcaretAPI.Infastructure.csproj", "{90BA98DF-A098-4BE2-B182-60437B53E315}"
 EndProject

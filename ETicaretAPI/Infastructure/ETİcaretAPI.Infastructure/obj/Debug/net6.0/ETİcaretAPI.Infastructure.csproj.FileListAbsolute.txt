@@ -1,0 +1,17 @@
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETİcaretAPI.Infastructure.deps.json
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETİcaretAPI.Infastructure.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETİcaretAPI.Infastructure.pdb
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETicaretAPI.Application.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETicaretAPI.Domain.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETicaretAPI.Application.pdb
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\bin\Debug\net6.0\ETicaretAPI.Domain.pdb
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.csproj.AssemblyReference.cache
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.AssemblyInfoInputs.cache
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.AssemblyInfo.cs
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.csproj.CoreCompileInputs.cache
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.csproj.CopyComplete
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\refint\ETİcaretAPI.Infastructure.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ETİcaretAPI.Infastructure.pdb
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETİcaretAPI.Infastructure\obj\Debug\net6.0\ref\ETİcaretAPI.Infastructure.dll

@@ -1,4 +1,5 @@
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\bin\Debug\net6.0\ETicaretAPI.Persistence.deps.json
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\bin\Debug\net6.0\ETicaretAPI.Persistence.runtimeconfig.json
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\bin\Debug\net6.0\ETicaretAPI.Persistence.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\bin\Debug\net6.0\ETicaretAPI.Persistence.pdb
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\bin\Debug\net6.0\ETicaretAPI.Application.dll
@@ -14,4 +15,5 @@ C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\obj\Debug\net6.0\ETicaretAPI.Persistence.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\obj\Debug\net6.0\refint\ETicaretAPI.Persistence.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\obj\Debug\net6.0\ETicaretAPI.Persistence.pdb
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\obj\Debug\net6.0\ETicaretAPI.Persistence.genruntimeconfig.cache
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Infastructure\ETicaretAPI.Persistence\obj\Debug\net6.0\ref\ETicaretAPI.Persistence.dll
