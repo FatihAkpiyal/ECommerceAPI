@@ -15,5 +15,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSidenavModule]
 })
 export class LayoutComponent {
+    constructor(){
 
+    }
+
+    ngOnInit():void {
+        
+    }
 }
