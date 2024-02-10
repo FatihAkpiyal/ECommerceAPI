@@ -3,6 +3,7 @@ import { BaseComponent } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpClientService } from '../../../services/common/http-client.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Product } from '../../../contracts/product';
 
 @Component({
   selector: 'app-products',
@@ -10,35 +11,46 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [HttpClientModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
-  providers:[HttpClientService]
+  providers: [HttpClientService]
 })
 export class ProductsComponent extends BaseComponent implements OnInit {
-  constructor(spinner:NgxSpinnerService, private httpClientService:HttpClientService){
+  constructor(spinner: NgxSpinnerService, private httpClientService: HttpClientService) {
     super(spinner)
   }
 
   ngOnInit(): void {
-      this.showSpinner();
-      this.httpClientService.get({
-        controller:"product"
-      
-      }).subscribe(data => console.log(data));
+    this.showSpinner();
+    this.httpClientService.get<Product[]>({
+      controller: "product"
 
-      // this.httpClientService.post({
-      //   controller:"product"
-      // },{
-      //   name:"Montesorri",
-      //   stock:100,
-      //   price:15
-      // }).subscribe();
+    }).subscribe(data => console.log(data));
 
-      this.httpClientService.put({
-        controller:"product",
-      },{
-        id:"57094168-16d9-4c3d-9158-98e8aaabce7e",
-        name:"HEBELE",
-        stock:31,
-        price:12
-      }).subscribe()
+    
+
+    // this.httpClientService.post({
+    //   controller:"product"
+    // },{
+    //   name:"Montesorri",
+    //   stock:100,
+    //   price:15
+    // }).subscribe();
+
+    // this.httpClientService.put({
+    //   controller:"product",
+    // },{
+    //   id:"57094168-16d9-4c3d-9158-98e8aaabce7e",
+    //   name:"HEBELE",
+    //   stock:31,
+    //   price:12
+    // }).subscribe()
+
+    // this.httpClientService.delete({
+    //   controller:"product/"},"ae907d4f-3f8a-4eeb-9a49-5e800bfda57f").subscribe();
+
+    // this.httpClientService.get({
+    //   baseUrl:"https://jsonplaceholder.typicode.com",
+    //   controller:"posts"
+    // }).subscribe(data=> console.log(data));
+
   }
 }
