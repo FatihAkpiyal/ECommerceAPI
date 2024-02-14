@@ -44,6 +44,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.25, )"
@@ -211,6 +223,71 @@
         }
       }
     },
+    "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETİcaretAPI.Infastructure\\ETİcaretAPI.Infastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETİcaretAPI.Infastructure\\ETİcaretAPI.Infastructure.csproj",
+        "projectName": "ETİcaretAPI.Infastructure",
+        "projectPath": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETİcaretAPI.Infastructure\\ETİcaretAPI.Infastructure.csproj",
+        "packagesPath": "C:\\Users\\Fatih\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETİcaretAPI.Infastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fatih\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Core\\ETicaretAPI.Application\\ETicaretAPI.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1001, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\ETicaretAPI.API.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -241,6 +318,9 @@
               },
               "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETicaretAPI.Persistence\\ETicaretAPI.Persistence.csproj"
+              },
+              "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETİcaretAPI.Infastructure\\ETİcaretAPI.Infastructure.csproj": {
+                "projectPath": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Infastructure\\ETİcaretAPI.Infastructure\\ETİcaretAPI.Infastructure.csproj"
               }
             }
           }
@@ -255,6 +335,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[10.4.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

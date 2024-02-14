@@ -1,4 +1,5 @@
 ﻿using ETicaretAPI.Application.Repositories;
+using ETicaretAPI.Application.RequestParameters;
 using ETicaretAPI.Application.ViewModels.Products;
 using ETicaretAPI.Domain.Entities;
 using Microsoft.AspNetCore.Http;
@@ -26,41 +27,56 @@ namespace ETicaretAPI.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery]Pagination pagination)
         {
+            await Task.Delay(1000);
+            var totalCount=_productReadRepository.GetAll(false).Count();
+            var products = _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Stock,
+                p.Price,
+                p.CreatedDate,
+                p.UpdatedDate,
+            }).ToList();
 
-            return Ok(_productReadRepository.GetAll());
-
-            //Order order =await _orderReadRepository.GetByIdAsync("551e05de-e306-4fb9-b60c-ad7e14b8acb6");
-            // order.Address = "İstanbul";
-            // await _orderWriteRepository.SaveAsync();
-
-            //await _productWriteRepository.AddRangeASync(new()
-            //{
-            //    new() {Id=Guid.NewGuid(),Name="Montesorri Oyuncak",Price=750,CreatedDate=DateTime.UtcNow,Stock=10},
-            //    new() {Id=Guid.NewGuid(),Name="Kitap Montesorri",Price=850,CreatedDate=DateTime.UtcNow,Stock=10},
-            //    new() {Id=Guid.NewGuid(),Name="Tahta Montesorri",Price=550,CreatedDate=DateTime.UtcNow,Stock=10},
-
-            //});
-            //var count = await _productWriteRepository.SaveAsync();
-            //Product p = await _productReadRepository.GetByIdAsync("70345151-4374-4cf4-a806-e9487974edd8");
-            //--------------------------------------
-            //p.Name = "Ahmet";
-
-            //await _productWriteRepository.SaveAsync();
-
-            /*
-             * ------ BURADA CUSTOMER OLUŞTURDUK VE BU CUSTOMERA İKİ ADET SİPARİŞ GİRDİK
-             * 
-             * var customerId =Guid.NewGuid();
-            await _customerWriteRepository.AddASync( new() { Id = customerId, Name="Johny Cash" });
-
-            await _orderWriteRepository.AddASync(new() { Description = "blab bla bla ", Address = "New york", CustomerId=customerId });
-            await _orderWriteRepository.AddASync(new() { Description = "hebele hubele ", Address = "Arkansas",  CustomerId = customerId });
-            await _orderWriteRepository.SaveAsync();*/
-
-
+            return Ok(new
+            {
+                totalCount,
+                products
+            });
         }
+
+        //Order order =await _orderReadRepository.GetByIdAsync("551e05de-e306-4fb9-b60c-ad7e14b8acb6");
+        // order.Address = "İstanbul";
+        // await _orderWriteRepository.SaveAsync();
+
+        //await _productWriteRepository.AddRangeASync(new()
+        //{
+        //    new() {Id=Guid.NewGuid(),Name="Montesorri Oyuncak",Price=750,CreatedDate=DateTime.UtcNow,Stock=10},
+        //    new() {Id=Guid.NewGuid(),Name="Kitap Montesorri",Price=850,CreatedDate=DateTime.UtcNow,Stock=10},
+        //    new() {Id=Guid.NewGuid(),Name="Tahta Montesorri",Price=550,CreatedDate=DateTime.UtcNow,Stock=10},
+
+        //});
+        //var count = await _productWriteRepository.SaveAsync();
+        //Product p = await _productReadRepository.GetByIdAsync("70345151-4374-4cf4-a806-e9487974edd8");
+        //--------------------------------------
+        //p.Name = "Ahmet";
+
+        //await _productWriteRepository.SaveAsync();
+
+        /*
+         * ------ BURADA CUSTOMER OLUŞTURDUK VE BU CUSTOMERA İKİ ADET SİPARİŞ GİRDİK
+         * 
+         * var customerId =Guid.NewGuid();
+        await _customerWriteRepository.AddASync( new() { Id = customerId, Name="Johny Cash" });
+
+        await _orderWriteRepository.AddASync(new() { Description = "blab bla bla ", Address = "New york", CustomerId=customerId });
+        await _orderWriteRepository.AddASync(new() { Description = "hebele hubele ", Address = "Arkansas",  CustomerId = customerId });
+        await _orderWriteRepository.SaveAsync();*/
+
+
 
         [HttpGet("{id}")]
 
@@ -73,6 +89,7 @@ namespace ETicaretAPI.API.Controllers
 
         public async Task<IActionResult> Post(VM_Create_Products model)
         {
+            
             await _productWriteRepository.AddASync(new() {
                 Name = model.Name,
                 Price = model.Price,

@@ -48,3 +48,9 @@ C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Office.Interop.Excel.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETİcaretAPI.Infastructure.dll
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETİcaretAPI.Infastructure.pdb

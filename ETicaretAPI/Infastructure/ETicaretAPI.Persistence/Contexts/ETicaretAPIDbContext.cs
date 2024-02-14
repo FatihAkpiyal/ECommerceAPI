@@ -24,14 +24,15 @@ namespace ETicaretAPI.Persistence.Contexts
             var datas = ChangeTracker
                 .Entries<BaseEntity>();
 
-            //foreach (var data in datas)
-            //{
-            //    _ = data.State switch
-            //    {
-            //        EntityState.Added => data.Entity.CreatedDate=DateTime.UtcNow,
-            //        EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow,
-            //    };
-            //}
+            foreach (var data in datas)
+            {
+                _ = data.State switch
+                {
+                    EntityState.Added => data.Entity.CreatedDate = DateTime.UtcNow,
+                    EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow,
+                    _ => DateTime.UtcNow
+                };
+            }
 
 
             return base.SaveChangesAsync(cancellationToken);
