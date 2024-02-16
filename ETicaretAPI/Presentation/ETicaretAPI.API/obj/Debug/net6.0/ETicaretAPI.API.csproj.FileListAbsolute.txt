@@ -54,3 +54,4 @@ C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Office.Interop.Excel.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETİcaretAPI.Infastructure.dll
 C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETİcaretAPI.Infastructure.pdb
+C:\Users\Fatih\Desktop\ETicaretUygulaması\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.API.staticwebassets.runtime.json

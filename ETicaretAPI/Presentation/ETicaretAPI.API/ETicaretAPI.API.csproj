@@ -27,4 +27,8 @@
     <ProjectReference Include="..\..\Infastructure\ETİcaretAPI.Infastructure\ETİcaretAPI.Infastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
