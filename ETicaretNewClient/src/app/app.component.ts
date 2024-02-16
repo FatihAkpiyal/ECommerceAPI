@@ -10,13 +10,15 @@ import { CustomToastrService, ToastrMessageType, ToastrPosition } from './servic
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientService } from './services/common/http-client.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet,
     LayoutComponent,ComponentsModule,RouterModule,NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,DeleteDialogComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

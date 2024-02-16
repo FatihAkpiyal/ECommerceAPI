@@ -7,11 +7,12 @@ import { Create_Product } from '../../../../contracts/create_product';
 import { BaseComponent } from '../../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AlertifyService, MessageType, Position } from '../../../../services/admin/alertify.service';
+import { FileUploadComponent, FileUploadOptions } from '../../../../services/common/file-upload/file-upload.component';
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule,FileUploadComponent],
   templateUrl: './create.component.html',
   styleUrl: './create.component.scss',
   providers:[ProductService,NgxSpinnerService,AlertifyService]
@@ -26,7 +27,15 @@ export class CreateComponent extends BaseComponent implements OnInit {
 
   }
 
-  @Output() createdProduct: EventEmitter<Create_Product> = new EventEmitter();
+  
+  @Output() createdProduct:EventEmitter<Create_Product> = new EventEmitter();
+  @Output() fileUploadOptions: Partial<FileUploadOptions> = {
+    action:"upload",
+    controller:"product",
+    explanation:"Resimleri Sürükleyin veya seçin..",
+    isAdminPage:true,
+    accept:".png, .jpg, .jpeg, .json"
+  };
 
   create(name: HTMLInputElement, stock: HTMLInputElement, price: HTMLInputElement) {
     this.showSpinner();

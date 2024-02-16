@@ -7,15 +7,20 @@ import { Create_Product } from '../../../contracts/create_product';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
+import { DeleteDirective } from '../../../directives/admin/delete.directive';
+import { AlertifyService } from '../../../services/admin/alertify.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
+
 
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [HttpClientModule, MatSidenavModule,CreateComponent,ListComponent],
+  imports: [HttpClientModule, MatSidenavModule,CreateComponent,ListComponent,DeleteDialogComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
-  providers: [HttpClientService]
+  providers: [HttpClientService,AlertifyService,NgxSpinnerService]
 })
 export class ProductsComponent extends BaseComponent implements OnInit {
   constructor(spinner: NgxSpinnerService, private httpClientService: HttpClientService) {
