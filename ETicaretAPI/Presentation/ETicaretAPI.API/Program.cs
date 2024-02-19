@@ -1,11 +1,13 @@
 using ETicaretAPI.Application.Validators.Products;
 using ETicaretAPI.Persistence;
+using ETÝcaretAPI.Infastructure;
 using ETÝcaretAPI.Infastructure.Filters;
 using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddPersistenceServices();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod()
 ));
 
