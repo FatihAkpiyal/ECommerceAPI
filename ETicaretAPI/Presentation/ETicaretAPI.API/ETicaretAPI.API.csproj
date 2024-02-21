@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\kaynak\productImages\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
