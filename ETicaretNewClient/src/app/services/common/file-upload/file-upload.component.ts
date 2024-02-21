@@ -68,7 +68,7 @@ export class FileUploadComponent {
               position: ToastrPosition.TopRight
             })
           }
-
+          
 
         }, (errorResponse: HttpErrorResponse) => {
 
@@ -88,7 +88,7 @@ export class FileUploadComponent {
               position: ToastrPosition.TopRight
             })
           }
-
+          
         });
       }
     });
