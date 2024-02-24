@@ -8,26 +8,32 @@ import { AlertifyService, MessageType, Position } from '../../../../services/adm
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDirective } from '../../../../directives/admin/delete.directive';
+import { DialogService } from '../../../../services/common/dialog.service';
+import { SelectProductImageDialogComponent } from '../../../../dialogs/select-product-image-dialog/select-product-image-dialog.component';
+import { FileUploadComponent } from '../../../../services/common/file-upload/file-upload.component';
 
 declare var $: any;
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [MatTableModule,MatPaginatorModule,HttpClientModule,DeleteDirective],
+  imports: [MatTableModule,MatPaginatorModule,
+    HttpClientModule,DeleteDirective,FileUploadComponent, SelectProductImageDialogComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss',
   providers:[ProductService,AlertifyService,NgxSpinnerService]
 })
 export class ListComponent extends BaseComponent implements OnInit {
-    constructor(private productService:ProductService, spinner:NgxSpinnerService,private alertify:
-      AlertifyService){
+    constructor(private productService:ProductService, 
+      spinner:NgxSpinnerService,
+      private alertify:AlertifyService,
+      private dialogService:DialogService){
       super(spinner)
 
     }
     
 
-    displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate','updatedDate', 'edit' ,'delete'];
+    displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate','updatedDate',"photos", 'edit' ,'delete'];
     dataSource :MatTableDataSource<List_Product> = null;
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -44,6 +50,15 @@ export class ListComponent extends BaseComponent implements OnInit {
       this.paginator.length = allProducts.totalCount;
     }
 
+    addProductImages(id:string){
+      this.dialogService.openDialog({
+        componentType:SelectProductImageDialogComponent,
+        data:id,
+        options:{
+          width:"1400px"
+        }
+      });
+    }
     // delete(id, event){
     //   alert(id)
     //   const img: HTMLImageElement= event.srcElement;

@@ -11,13 +11,15 @@ import { DeleteDirective } from '../../../directives/admin/delete.directive';
 import { AlertifyService } from '../../../services/admin/alertify.service';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
+import { SelectProductImageDialogComponent } from '../../../dialogs/select-product-image-dialog/select-product-image-dialog.component';
 
 
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [HttpClientModule, MatSidenavModule,CreateComponent,ListComponent,DeleteDialogComponent],
+  imports: [HttpClientModule, MatSidenavModule,CreateComponent,ListComponent,
+    DeleteDialogComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
   providers: [HttpClientService,AlertifyService,NgxSpinnerService]
