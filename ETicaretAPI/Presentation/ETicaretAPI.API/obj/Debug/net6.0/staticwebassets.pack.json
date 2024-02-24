@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\wwwroot\\photo-images\\5.png",
+      "PackagePath": "staticwebassets\\photo-images\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\wwwroot\\photo-images\\6.png",
+      "PackagePath": "staticwebassets\\photo-images\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\wwwroot\\photo-images\\7.png",
+      "PackagePath": "staticwebassets\\photo-images\\7.png"
+    },
+    {
+      "Id": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\wwwroot\\photo-images\\8.png",
+      "PackagePath": "staticwebassets\\photo-images\\8.png"
+    },
+    {
+      "Id": "C:\\Users\\Fatih\\Desktop\\ETicaretUygulaması\\ETicaretAPI\\Presentation\\ETicaretAPI.API\\wwwroot\\resource\\files\\5.png",
+      "PackagePath": "staticwebassets\\resource\\files\\5.png"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.ETicaretAPI.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.ETicaretAPI.API.props",
+      "PackagePath": "build\\ETicaretAPI.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ETicaretAPI.API.props",
+      "PackagePath": "buildMultiTargeting\\ETicaretAPI.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.ETicaretAPI.API.props",
+      "PackagePath": "buildTransitive\\ETicaretAPI.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

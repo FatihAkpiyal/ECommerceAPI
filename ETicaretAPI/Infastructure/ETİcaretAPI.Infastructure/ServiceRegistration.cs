@@ -2,6 +2,7 @@
 using ETİcaretAPI.Infastructure.Enums;
 using ETİcaretAPI.Infastructure.Services;
 using ETİcaretAPI.Infastructure.Services.Storage;
+using ETİcaretAPI.Infastructure.Services.Storage.Azure;
 using ETİcaretAPI.Infastructure.Services.Storage.Local;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -19,7 +20,7 @@ namespace ETİcaretAPI.Infastructure
             serviceCollection.AddScoped<IStorageService, StorageService>();
 
         }
-        public static void AddStorage<T>(this IServiceCollection serviceCollection) where T : class, IStorage
+        public static void AddStorage<T>(this IServiceCollection serviceCollection) where T : Storage, IStorage
         {
             serviceCollection.AddScoped<IStorage, T>();
         }
@@ -31,7 +32,7 @@ namespace ETİcaretAPI.Infastructure
                     serviceCollection.AddScoped<IStorage, LocalStorage>();
                     break;
                 case StorageType.Azure:
-
+                    serviceCollection.AddScoped<IStorage, AzureStorage>();
                     break;
                 case StorageType.AWS:
 
