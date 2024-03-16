@@ -58,13 +58,26 @@ export class ProductService {
 
   }
 
-  async readImages(id :string): Promise<List_Product_Image[]>{
+  async readImages(id :string,successCallBack?: () => void): Promise<List_Product_Image[]>{
     const getObservable: Observable<List_Product_Image[]> = this.httpClientService.get<List_Product_Image[]>({
       action:"getproductimages",
       controller:"product",
       
     },id);
 
-    return await firstValueFrom(getObservable);
+    const images : List_Product_Image[] = await await firstValueFrom(getObservable);
+    successCallBack();
+
+    return images;
+  }
+
+  async deleteImage(id:string, imageId:string, successCallBack?:()=>void){
+    const deleteObservable = this.httpClientService.delete({
+      action:"deleteproductimage",
+      controller:"product",
+      queryString:`imageId=${imageId}`
+    },id)
+    await firstValueFrom(deleteObservable);
+    successCallBack();
   }
 }

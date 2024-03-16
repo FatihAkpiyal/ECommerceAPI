@@ -1,0 +1,37 @@
+<div class="row">
+    
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
+            <div class="form-group">
+                <label for="adSoyad">Ad Soyad</label>
+                <input type="text" formControlName="adSoyad" class="form-control" id="adSoyad" aria-describedby="emailHelp" placeholder="Ad Soyad"
+                 [ngClass] = "{'is-invalid': submitted && component.adSoyad.errors}">
+                <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && component.adSoyad.errors.required">Lütfen ad soyadı boş geçmeyiniz.</small>
+              </div>
+            <div class="form-group">
+              <label for="kullaniciadi">Kullanıcı adı</label>
+              <input type="text" formControlName="kullaniciAdi" class="form-control" id="kullaniciadi" aria-describedby="emailHelp" placeholder="Kullanıcı adı ">
+              <small id="emailHelp" class="form-text text-muted" style="display: none;">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type=" email" formControlName="email" class="form-control" id="email" placeholder="Email">
+                <small id="emailHelp" class="form-text text-muted" style="display: none;" style="display: none;">We'll never share your email with anyone else.</small>
+              </div>
+            <div class="form-group">
+              <label for="password">Şifre</label>
+              <input type="password" formControlName="sifre" class="form-control" id="password" placeholder="Şifre">
+            </div>
+            <div class="form-group">
+                <label for="tekrar">Şifre Tekrar</label>
+                <input type="password" formControlName="sifreTekrar" class="form-control" id="tekrar" placeholder="Şifre Tekrar">
+              </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+          </form>
+    </div>
+    <div class="col-md-3"></div>
+    
+    
+</div>

@@ -8,11 +8,14 @@ import { ListComponent } from '../../admin/components/products/list/list.compone
 import { ProductService } from '../../services/common/models/product.service';
 import { HttpClientService } from '../../services/common/http-client.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import {MatCard, MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { List_Product_Image } from '../../contracts/list_product_image';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { DialogService } from '../../services/common/dialog.service';
+import { DeleteDialogComponent, DeleteState } from '../delete-dialog/delete-dialog.component';
 
-
+declare var $:any;
 
 
 
@@ -30,7 +33,9 @@ import { List_Product_Image } from '../../contracts/list_product_image';
 export class SelectProductImageDialogComponent extends BaseDialog<SelectProductImageDialogComponent> implements OnInit {
     constructor(dialogRef:MatDialogRef<SelectProductImageDialogComponent>,
       @Inject(MAT_DIALOG_DATA) public data: SelectProductImageState | string,
-      private productService:ProductService){
+      private productService:ProductService,
+      private spinner:NgxSpinnerService,
+      private dialogService:DialogService){
       super(dialogRef)
     }
   
@@ -49,7 +54,27 @@ export class SelectProductImageDialogComponent extends BaseDialog<SelectProductI
     images:List_Product_Image[];
 
     async ngOnInit() {
-      this.images= await this.productService.readImages(this.data as string);
+      this.spinner.show();
+      this.images= await this.productService.readImages(this.data as string, ()=> this.spinner.hide());
+    }
+
+    async deleteImage(imageId:string, event:any){
+
+      this.dialogService.openDialog({
+        componentType:DeleteDialogComponent,
+        data:DeleteState.Yes,
+        afterClosed: async()=>{
+          this.spinner.show();
+      await this.productService.deleteImage(this.data as string, imageId, ()=> {
+        this.spinner.hide();
+        
+        var card = $(event.srcElement).parent().parent();
+        card.fadeOut(500);
+      });
+        }
+      })
+
+      
     }
 }
 

@@ -2,16 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseComponent } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpClientService } from '../../../services/common/http-client.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Create_Product } from '../../../contracts/create_product';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
-import { DeleteDirective } from '../../../directives/admin/delete.directive';
 import { AlertifyService } from '../../../services/admin/alertify.service';
-import {MatDialogModule} from '@angular/material/dialog';
 import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
-import { SelectProductImageDialogComponent } from '../../../dialogs/select-product-image-dialog/select-product-image-dialog.component';
 
 
 
