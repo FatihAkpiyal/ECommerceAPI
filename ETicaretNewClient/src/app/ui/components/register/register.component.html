@@ -4,28 +4,34 @@
     <div class="col-md-6">
         <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
             <div class="form-group">
-                <label for="adSoyad">Ad Soyad</label>
-                <input type="text" formControlName="adSoyad" class="form-control" id="adSoyad" aria-describedby="emailHelp" placeholder="Ad Soyad"
-                 [ngClass] = "{'is-invalid': submitted && component.adSoyad.errors}">
-                <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && component.adSoyad.errors.required">Lütfen ad soyadı boş geçmeyiniz.</small>
+                <label for="nameSurname">Ad Soyad</label>
+                <input type="text" formControlName="nameSurname" class="form-control" id="nameSurname" aria-describedby="emailHelp" placeholder="Ad Soyad"
+                 [ngClass] = "{'is-invalid': submitted && component.nameSurname.errors}">
+                 <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && component.nameSurname.errors?.required">Lütfen ad soyadı boş geçmeyiniz.</small>
+                 <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && (component.nameSurname.errors?.maxlength || component.nameSurname.errors?.minlength)">Lütfen 3 ile 50 karakter arasında yazınız!</small>
+
               </div>
             <div class="form-group">
-              <label for="kullaniciadi">Kullanıcı adı</label>
-              <input type="text" formControlName="kullaniciAdi" class="form-control" id="kullaniciadi" aria-describedby="emailHelp" placeholder="Kullanıcı adı ">
-              <small id="emailHelp" class="form-text text-muted" style="display: none;">We'll never share your email with anyone else.</small>
+              <label for="userName">Kullanıcı adı</label>
+              <input type="text" formControlName="userName" [ngClass] = "{'is-invalid': submitted && component.userName.errors}" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Kullanıcı adı ">
+              <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && component.userName.errors?.required">Lütfen kullanıcı adını boş geçmeyiniz.</small>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type=" email" formControlName="email" class="form-control" id="email" placeholder="Email">
-                <small id="emailHelp" class="form-text text-muted" style="display: none;" style="display: none;">We'll never share your email with anyone else.</small>
+                <input type=" email" formControlName="email" [ngClass] = "{'is-invalid': submitted && component.email.errors}" class="form-control" id="email" placeholder="Email">
+                <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && component.email.errors?.required">Lütfen emaili boş geçmeyiniz.</small>
+                <small  class="form-text text-muted invalid-feedback" *ngIf="submitted && component.email.errors?.email">Lütfen email giriniz!</small>
+
               </div>
             <div class="form-group">
               <label for="password">Şifre</label>
-              <input type="password" formControlName="sifre" class="form-control" id="password" placeholder="Şifre">
+              <input type="password" [ngClass] = "{'is-invalid': submitted && component.password.errors}" formControlName="password" class="form-control" id="password" placeholder="Şifre">
             </div>
             <div class="form-group">
-                <label for="tekrar">Şifre Tekrar</label>
-                <input type="password" formControlName="sifreTekrar" class="form-control" id="tekrar" placeholder="Şifre Tekrar">
+                <label for="passwordConfirm">Şifre Tekrar</label>
+                <input type="password" [ngClass] = "{'is-invalid': submitted && component.passwordConfirm.errors}" formControlName="passwordConfirm" class="form-control" id="passwordConfirm" placeholder="Şifre Tekrar">
+                <small *ngIf="submitted && frm.hasError('notSame')">Şifre tekrarı şifre ile uymuyor</small>
+
               </div>
             <br>
             <button type="submit" class="btn btn-primary">Kayıt Ol</button>
