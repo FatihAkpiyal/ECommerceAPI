@@ -7,6 +7,8 @@ import { Create_user } from '../../../contracts/users/create_users';
 import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../services/ui/custom-toastr.service';
 import { HttpClientService } from '../../../services/common/http-client.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BaseComponent } from '../../../base/base.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-register',
@@ -16,9 +18,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './register.component.scss',
   providers:[UserService,HttpClientService]
 })
-export class RegisterComponent {
+export class RegisterComponent extends BaseComponent {
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private toastService: CustomToastrService) { }
+  constructor(private formBuilder: FormBuilder,
+    spinner:NgxSpinnerService, private userService: UserService, private toastService: CustomToastrService) {
+    super(spinner)
+   }
 
   frm: FormGroup;
 
