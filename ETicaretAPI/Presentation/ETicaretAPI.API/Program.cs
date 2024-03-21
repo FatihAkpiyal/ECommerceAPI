@@ -7,6 +7,8 @@ using ETÝcaretAPI.Infastructure.Filters;
 using ETÝcaretAPI.Infastructure.Services.Storage.Azure;
 using ETÝcaretAPI.Infastructure.Services.Storage.Local;
 using FluentValidation.AspNetCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +32,22 @@ builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAuthentication("Admin")
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new()
+        {
+            ValidateAudience = true, // Oluþturulacak token deðerini kimlerin kullanacagýný belirlediðimiz deðerdir. =>www.x.com
+            ValidateIssuer = true, // token deðerini kimin daðýttýný iffade edeceðimiz alandýr => www.myapi.com
+            ValidateLifetime = true,// tokenin süresini kontrol eder
+            ValidateIssuerSigningKey = true, //Üretilecek token deðerinin uygulamamýza ait bir deðer oldugunu ifade eden security key verisisnin doðrulanmasýdýr.
+
+            ValidAudience = builder.Configuration["Token:Audience"],
+            ValidIssuer = builder.Configuration["Token:Issuer"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Token:SecurityKey"]))
+        };
+    });
 
 var app = builder.Build();
 

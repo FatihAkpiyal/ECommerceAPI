@@ -34,7 +34,7 @@ namespace ETicaretAPI.Application.Features.Commands.AppUser.LoginUser
 
           SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
             if (result.Succeeded)
-            {
+            { 
                 //... Yetkileri belirleme kısmı
 
             }
