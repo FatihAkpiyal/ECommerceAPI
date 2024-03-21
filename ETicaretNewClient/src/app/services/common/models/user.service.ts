@@ -3,6 +3,7 @@ import { HttpClientService } from '../http-client.service';
 import { User } from '../../../../Entities/user';
 import { Create_user } from '../../../contracts/users/create_users';
 import { Observable, firstValueFrom } from 'rxjs';
+import { Token } from '../../../contracts/token/token';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +22,13 @@ export class UserService {
     return await firstValueFrom(observable) as Create_user;
   }
 
-  async login(userNameOrEmail:string, password:string, callBackFunction?: ()=> void): Promise<void>{
-   const observable:Observable<any> = this.httpClientService.post({
+  async login(userNameOrEmail:string, password:string, callBackFunction?: ()=> void): Promise<any | Token>{
+   const observable:Observable<any | Token> = this.httpClientService.post<any | Token>({
       controller:"users",
       action:"login"
     }, { userNameOrEmail, password })
 
-    await firstValueFrom(observable);
+    const token: Token = await firstValueFrom(observable);
     callBackFunction();
   }
 
