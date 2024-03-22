@@ -1,4 +1,6 @@
-﻿using ETicaretAPI.Application.Exceptions;
+﻿using ETicaretAPI.Application.Abstraction.Token;
+using ETicaretAPI.Application.DTOs;
+using ETicaretAPI.Application.Exceptions;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -13,11 +15,15 @@ namespace ETicaretAPI.Application.Features.Commands.AppUser.LoginUser
     {
         
             readonly UserManager<Domain.Entities.Identity.AppUser> _userManager;
+            readonly ITokenHandler _tokenHandler;
 
-        public LoginUserCommandHandler(UserManager<Domain.Entities.Identity.AppUser> userManager, SignInManager<Domain.Entities.Identity.AppUser> signInManager)
+        public LoginUserCommandHandler(UserManager<Domain.Entities.Identity.AppUser> userManager,
+            SignInManager<Domain.Entities.Identity.AppUser> signInManager,
+            ITokenHandler tokenHandler)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _tokenHandler = tokenHandler;
         }
 
         readonly SignInManager<Domain.Entities.Identity.AppUser> _signInManager;
@@ -28,18 +34,22 @@ namespace ETicaretAPI.Application.Features.Commands.AppUser.LoginUser
             if (user == null)
                 user=await _userManager.FindByEmailAsync(request.UserNameOrEmail);
             if (user == null)
-                throw new NotFoundUserException("Kullanıcı adı veya şifre hatalı");
+                throw new NotFoundUserException();
 
 
 
           SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
             if (result.Succeeded)
-            { 
-                //... Yetkileri belirleme kısmı
+            {
+               Token token = _tokenHandler.CreateAccessToken(5);
 
+                return new LoginUserSuccessCommandResponse()
+                {
+                    Token = token
+                };
             }
+            throw new AuthenticationErrorException();
             
-            return new();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace ETİcaretAPI.Infastructure.Services.Token
         {
             ETicaretAPI.Application.DTOs.Token token = new();
 
-            SymmetricSecurityKey secuirtyKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecuirtyKey"]));
+            SymmetricSecurityKey secuirtyKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]));
 
             SigningCredentials signingCredentials = new(secuirtyKey, SecurityAlgorithms.HmacSha256);
 
@@ -39,7 +39,7 @@ namespace ETİcaretAPI.Infastructure.Services.Token
 
             JwtSecurityTokenHandler tokenHandler = new();
            token.AccessToken = tokenHandler.WriteToken(securityToken);
-            return token;
+           return token;
         }
     }
 }

@@ -7,6 +7,7 @@ using ETÝcaretAPI.Infastructure.Filters;
 using ETÝcaretAPI.Infastructure.Services.Storage.Azure;
 using ETÝcaretAPI.Infastructure.Services.Storage.Local;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -33,8 +34,8 @@ builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication("Admin")
-    .AddJwtBearer(options =>
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer("Admin",options =>
     {
         options.TokenValidationParameters = new()
         {
@@ -61,6 +62,8 @@ app.UseStaticFiles();
 app.UseCors();
 app.UseHttpsRedirection();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
