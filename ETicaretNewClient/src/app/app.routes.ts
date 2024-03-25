@@ -3,6 +3,7 @@ import { LayoutComponent } from './admin/layout/layout.component';
 import { HomeComponent } from './ui/components/home/home.component';
 import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 
+
 export const routes: Routes = [
     {
         path: "admin", component: LayoutComponent, children: [
@@ -18,7 +19,7 @@ export const routes: Routes = [
             {
                 path: "orders", loadChildren: () => import("./admin/components/orders/orders.module").then
                     (module => module.OrdersModule)
-            },
+            }, 
 
 
         ]
